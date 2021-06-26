@@ -9,9 +9,9 @@ module.exports = {
       }
     }
   },
-  outputDir: '../toDoList/public',
+  outputDir: '../backend/public',
   assetsDir: 'assets',
   indexPath: process.env.NODE_ENV === 'production'
-    ? '../toDoList/resources/views/index.blade.php'
+    ? '../backend/resources/views/index.blade.php'
     : 'index.html'
 }
