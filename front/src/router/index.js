@@ -25,12 +25,12 @@ const routes = [
   },
   {
     path: '/tasks',
-    name: 'task.list',
+    name: 'taskIndex',
     component: TaskIndex
   },
   {
     path: '/tasks/create',
-    name: 'task.create',
+    name: 'taskCreate',
     component: TaskCreate
   },
   {
