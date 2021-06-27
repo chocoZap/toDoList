@@ -9,9 +9,15 @@ module.exports = {
       }
     }
   },
+
   outputDir: '../backend/public',
   assetsDir: 'assets',
+
   indexPath: process.env.NODE_ENV === 'production'
     ? '../backend/resources/views/index.blade.php'
-    : 'index.html'
+    : 'index.html',
+
+  transpileDependencies: [
+    'vuetify'
+  ]
 }
