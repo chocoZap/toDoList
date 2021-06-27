@@ -6,6 +6,8 @@ import TaskIndex from "../views/example/index";
 import TaskShow from "../views/example/show";
 import TaskCreate from "../views/example/create";
 import TaskEdit from "../views/example/edit";
+// 加筆箇所
+import Login from "../views/Login";
 
 Vue.use(VueRouter)
 
@@ -22,6 +24,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/tasks',
