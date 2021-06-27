@@ -7,8 +7,7 @@ const actions = {
       method,
       url,
       data
-    }
-    debugger
+    }    
     const res = await axios(options)
 
     return res
@@ -19,7 +18,6 @@ const actions = {
     return dispatch('request', request)
   },
   async get({dispatch}, request) {
-    debugger
     request.method = await 'get'
     return dispatch('request', request)
   },
