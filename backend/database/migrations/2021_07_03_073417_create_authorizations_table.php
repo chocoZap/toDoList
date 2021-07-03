@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAuthorizationsTable extends Migration
 {
+    // pushするためのコメント
     /**
      * Run the migrations.
      *
