@@ -5,23 +5,34 @@
         hi.display-1 ログイン
       v-card-text
         v-form
-          v-text-field(prepend-icon="mdi-account-circle" label="ユーザー名")
+          v-text-field(prepend-icon="mdi-account-circle" label="ユーザー名" v-model="name")
           v-text-field(
             :type="showPassword ? 'text' : 'password'"
             prepend-icon="mdi-lock"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            label="パスワード"
+            label="パスワード" v-model="password"
             @click:append="showPassword = !showPassword"
           )
           v-card-actions
-            v-btn.info ログイン
+            v-btn.info(@click="submit") ログイン
 
 </template>
 <script>
   export default {
     name: 'Login',
-    data: () => ({
-      showPassword : false
-    })
+
+  data(){
+    return {
+      showPassword : false,
+      name:'',
+      password:'',
+    }
+  },
+  methods:{
+    submit(){
+      console.log(this.name,this.password)
+    }
+  }
   };
+
 </script>

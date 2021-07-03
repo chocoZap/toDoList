@@ -7,7 +7,7 @@ const actions = {
       method,
       url,
       data
-    }    
+    }
     const res = await axios(options)
 
     return res
