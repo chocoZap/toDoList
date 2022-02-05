@@ -1,16 +1,16 @@
 export const state = {
-  tasks: [],
-  selectedTask: {}
+  talkLists: [],
+  selectedTalkList: {}
 }
 
 export const getters = {}
 
 export  const mutations = {
-  setTasks(state, payload) {
-    state.tasks = payload
+  setTalkLists(state, payload) {
+    state.talkLists = payload
   },
-  setSelectedTask(state, payload) {
-    state.selectedTask = payload
+  setSelectedTalkList(state, payload) {
+    state.selectedTalkList = payload
   }
 }
 
@@ -19,47 +19,50 @@ export const actions = {
     dispatch(
       'http/get',
       {
-        url: '/api/tasks'
+        url: `/api/talkLists`
       },
       {
         root: true
       },
     ).then((res) => {
-      commit('setTasks', res.data)
+      commit('setTalkLists', res.data)
     })
   },
   show ({ dispatch, commit }, id) {
     dispatch(
       'http/get',
       {
-        url: '/api/tasks/' + id
+        url: '/api/talkLists/' + id
       },
       {
         root: true
       },
     ).then((res) => {
-      commit('setSelectedTask', res.data)
+      commit('setSelectedTalkList', res.data)
     })
   },
-  store ({ dispatch }, data) {
-    return dispatch(
+  async store ({ dispatch, commit }, data) {
+    return await dispatch(
       'http/post',
       {
-        url: '/api/tasks',
+        url: '/api/talkLists',
         data
       },
       {
         root: true
       }
-    )
+    ).then((res) => {
+      commit('setTalkLists', res.data)
+      return res.status
+    })
   },
-  update ({ dispatch }, task) {
-    const id = task.id
-    const data = task.data
+  update ({ dispatch }, talkList) {
+    const id = talkList.id
+    const data = talkList.data
     return dispatch(
       'http/put',
       {
-        url: '/api/tasks/' + id,
+        url: '/api/talkLists/' + id,
         data
       },
       {
@@ -71,7 +74,7 @@ export const actions = {
     dispatch(
       'http/delete',
       {
-        url: '/api/tasks/' + id
+        url: '/api/talkLists/' + id
       },
       {
         root: true

@@ -18,3 +18,9 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+.v-main {
+  background: #f8f8f8;
+}
+</style>
