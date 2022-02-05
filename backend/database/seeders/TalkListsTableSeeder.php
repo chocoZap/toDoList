@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Task;
+use App\Models\TalkList;
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
-class TasksTableSeeder extends Seeder
+class TalkListsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +16,8 @@ class TasksTableSeeder extends Seeder
     public function run()
     {
         for ($i = 1; $i <= 10; $i++) {
-            Task::create([
-                'title' => 'title' . $i,
+          TalkList::create([
                 'content' => 'content' . $i,
-                'person_in_charge' => 'person_in_charge' . $i,
             ]);
         }
     }

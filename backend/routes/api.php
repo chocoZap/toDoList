@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 // example
 // 一覧取得
-Route::get('/tasks', 'App\Http\Controllers\TaskController@index');
+Route::get('/talkLists', 'App\Http\Controllers\TalkListController@index');
 // 登録
-Route::post('/tasks', 'App\Http\Controllers\TaskController@store');
+Route::post('/talkLists', 'App\Http\Controllers\TalkListController@store');
 // 詳細取得
-Route::get('/tasks/{task}', 'App\Http\Controllers\TaskController@show');
+Route::get('/talkLists/{task}', 'App\Http\Controllers\TalkListController@show');
 // 編集
-Route::put('/tasks/{task}', 'App\Http\Controllers\TaskController@update');
+Route::put('/talkLists/{task}', 'App\Http\Controllers\TalkListController@update');
 // 削除
-Route::delete('/tasks/{task}', 'App\Http\Controllers\TaskController@destroy');
+Route::delete('/talkLists/{task}', 'App\Http\Controllers\TalkListController@destroy');

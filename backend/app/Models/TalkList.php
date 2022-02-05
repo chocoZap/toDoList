@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class TalkList extends Model
 {
-    protected $fillable = [
-        'title',
-        'content',
-        'person_in_charge',
-    ];
+  //
+  protected $fillable = ['content'];
 }
